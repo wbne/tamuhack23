@@ -13,16 +13,11 @@ function tokenTime(token) {
         "code_verifier": pkce
     }
     console.log(body)
-    try{
     const req = new XMLHttpRequest();
+    req.open("POST", "https://api.fitbit.com/oauth2/token");
     req.addEventListener("load", getUserData);
     req.setRequestHeader("Content-Type", "application/x-www-form-urlencoded")
-    req.open("POST", "https://api.fitbit.com/oauth2/token");
     req.send(body);
-    }
-    catch {
-        console.log(error)
-    }
 }
 try {
     // get the url 
